@@ -4,7 +4,7 @@
 # ==================================================  BSPWM
 # ---------------------------------------------------------  Reload sxhkd
 super + l
-	rofi -show tmux -modi "tmux:~/.local/bin/tmux-sessions.sh"	
+	rofi -show tmux -modi "tmux:~/.local/bin/tmux-sessions.sh"
 super + grave
     pkill -USR1 -x sxhkd && dunstify -r 1234 -t 1000 "sxhkd" "Reloaded ✅"
 # ---------------------------------------------------------  Refresh bspwm
@@ -12,7 +12,7 @@ ctrl + super + alt + Return
 	bspc wm -r
 # ---------------------------------------------------------  Btop++
 super + alt + b
-    st -T btop -e btop	
+    st -e btop -c btop
 # ---------------------------------------------------------  Powermenu
 super + Escape
 	~/.config/rofi/scripts/powermenu-t4.sh
@@ -36,34 +36,34 @@ super + c
 # ---------------------------------------------------------  Open Discord
 super + d
 	vesktop
-# ---------------------------------------------------------  VSCode
+# ---------------------------------------------------------  Thunar
 super + e
 	thunar ~/.repos/nixos
 # ------o--------------------------------------------------  thunar
 super + f
 	thunar
-# ------o--------------------------------------------------  Geany 
+# ------o--------------------------------------------------  Geany
 super + g
 	geany
-# ---------------------------------------------------------  Helix
-super + h
-	kdocker -f -q kitty --class=Terminalnvim -e hx .repos/
-# ---------------------------------------------------------  Rmpc	
+# ---------------------------------------------------------  neovim
+super + n
+	kdocker -f -q kitty --class=Terminalnvim -e nvim
+# ---------------------------------------------------------  Rmpc
 super + m
     kdocker -f -q st -c floating_rmpc -e rmpc
-# ---------------------------------------------------------  Rmpc	
+# ---------------------------------------------------------  Picart
 super + v
     picard
-# ---------------------------------------------------------  Terminal
+# ---------------------------------------------------------  Terminal pinned
 super + p
 	st -c TerminalPinned
-h# ---------------------------------------------------------  Terminal
+# ---------------------------------------------------------  Spotify
 super + s
 	kdocker -q -f spotify --disable-accelerated-video-decode --no-zygote
 # ---------------------------------------------------------  Exit
 super + q
 	bspc node -c
-# ---------------------------------------------------------  Kitty
+# ---------------------------------------------------------  Yazi
 super + y
 	kitty --class=YaziTerm -e yazi
 ###########################################################
@@ -112,15 +112,15 @@ super + shift + {plus,minus}
     }
 
 # ========================================== FLOATING NODES
-# ---------------------------------------------------------  move floating window
+# ---------------------------------------------------------  Move floating window
 alt + shift + {Left,Down,Up,Right}
 	bspc node -v {-20 0,0 20,0 -20,20 0}
-# ---------------------------------------------------------  Increase/decrease floating window
-ctrl + shift + {plus,minus}
-	{ \
-	  xdotool getactivewindow windowmove --relative -- -50 -25 ; xdo resize -w +100 -h +50; \
-	, xdotool getactivewindow windowmove --relative -- +50 +25 ; xdo resize -w -100 -h -50; \
-	}
+# ---------------------------------------------------------  Move floating window
+#ctrl + shift + {plus,minus}
+#	{ \
+#	  xdotool getactivewindow windowmove --relative -- -50 -25 ; xdo resize -w +100 -h +50; \
+#	, xdotool getactivewindow windowmove --relative -- +50 +25 ; xdo resize -w -100 -h -50; \
+#	}
 
 # ============================================== PLAY NODES
 # ---------------------------------------------------------  NODE Display
