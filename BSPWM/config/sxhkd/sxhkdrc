@@ -45,6 +45,9 @@ super + f
 # ------o--------------------------------------------------  Geany
 super + g
 	geany
+# ---------------------------------------------------------  Helix
+super + h
+	kdocker -f -q kitty --class=Terminalnvim -e hx
 # ---------------------------------------------------------  neovim
 super + n
 	kdocker -f -q kitty --class=Terminalnvim -e nvim
